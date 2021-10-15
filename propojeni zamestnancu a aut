@@ -1,0 +1,11 @@
+INSERT INTO employee ( id, firstname, lastname, email, phone, birthdate, description )
+VALUES ('1' , 'Jan' , 'Sefzig' , 'email@gmail.com' , '602550029' , '22.12.2004' , 'vysokej' ) ;
+
+VALUES ('!' , 'BMW' , 'm3' );
+VALUES ('2' , 'BMW' , 'm4' );
+VALUES ('3' , 'BMW' , 'm5' );
+VALUES ('4' , 'BMW' , 'm6' );
+VALUES ('5' , 'BMW' , 'm7' );
+
+ALTER TABLE employee
+ADD car_id varchar(255);
