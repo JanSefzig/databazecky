@@ -1,12 +1,23 @@
+--vytvoření tabulky--
+CREATE TABLE garage (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  capacity VARCHAR (255),
+  gpy_x VARCHAR (255),
+  gpy_y VARCHAR (255),
+  name VARCHAR (255),
+  description VARCHAR (255)
+); 
+
+--vkládání do tabulky--
 INSERT INTO employee ( id, firstname, lastname, email, phone, birthdate, description )
 VALUES ('1' , 'Jan' , 'Sefzig' , 'email@gmail.com' , '602550029' , '22.12.2004' , 'vysokej' ) ;
---Propojeni zamestnancu a aut--
 VALUES ('!' , 'BMW' , 'm3' );
 VALUES ('2' , 'BMW' , 'm4' );
 VALUES ('3' , 'BMW' , 'm5' );
 VALUES ('4' , 'BMW' , 'm6' );
 VALUES ('5' , 'BMW' , 'm7' );
 
+--Propojeni zamestnancu a aut--
 ALTER TABLE employee
 ADD car_id varchar(255);
 
@@ -29,3 +40,40 @@ FROM employee;
 
 SELECT COUNT(*) AS pocet_garazi
 FROM garage;
+
+--tabulka accessory--
+CREATE TABLE accessory (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR (255),
+  description VARCHAR (255)
+); 
+
+INSERT INTO accessory ( id, name, description )
+VALUES ('1' , 'Adaptivní tempomat' , 'AT' );
+
+INSERT INTO accessory ( id, name, description )
+VALUES ('2' , 'Panoramatická střecha' , 'PS' );
+
+INSERT INTO accessory ( id, name, description )
+VALUES ('3' , 'Parkovací kamera' , 'PA' );
+
+INSERT INTO accessory ( id, name, description )
+VALUES ('4' , 'Parkovací senzory' , 'PS' );
+
+INSERT INTO accessory ( id, name, description )
+VALUES ('5' , 'Satelitní navigace' , 'SN' );
+
+INSERT INTO accessory ( id, name, description )
+VALUES ('6' , 'Tažné zařízení' , 'TZ' );
+
+INSERT INTO accessory ( id, name, description )
+VALUES ('7' , 'Tempomat' , 'T' );
+
+INSERT INTO accessory ( id, name, description )
+VALUES ('8' , 'Vyhřívaná sedadla' , 'VS' );
+
+INSERT INTO accessory ( id, name, description )
+VALUES ('9' , 'ABS' , 'abs' );
+
+INSERT INTO accessory ( id, name, description )
+VALUES ('10' , 'Hlídání mrtvého úhlu' , 'HMU' );
