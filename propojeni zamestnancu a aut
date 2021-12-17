@@ -76,4 +76,66 @@ INSERT INTO accessory ( id, name, description )
 VALUES ('9' , 'ABS' , 'abs' );
 
 INSERT INTO accessory ( id, name, description )
-VALUES ('10' , 'Hlídání mrtvého úhlu' , 'HMU' );
+VALUES ('10' , 'Hlídání mrtvého úhlu' , 'HMU' )
+
+--VAZEBNI TABULKA CAR ACCESSORY--
+
+--vytvoření tabulky--
+CREATE TABLE car_accessory(
+car_id VARCHAR(255),
+accessory_id VARCHAR(255)
+);
+--propojení car_accessory s car a accessory--
+ALTER TABLE car_accessory
+ADD FOREIGN KEY (car_id) 
+REFERENCES car(id);
+
+ALTER TABLE car_accessory
+ADD FOREIGN KEY (accessory_id) 
+REFERENCES accessory(id);
+--přídání id vozidla a accessory--
+INSERT INTO car_accessory (car_id, accessory_id)
+VALUES ('1''5')
+('2','5'),
+('3','5'),
+('4','5'),
+('5','5'),
+('6','5'),
+('7','5'),
+('8','5'),
+('9','5'),
+('10','5'),
+('11','5'),
+('12','5'),
+('13','5'),
+('14','5')
+;
+--5 aut a 3 accessory--
+INSERT INTO car_accessory (car_id, accessory_id)
+VALUES ('15','5'),
+('15','10'),
+('15','3');
+
+INSERT INTO car_accessory (car_id, accessory_id)
+VALUES ('14','3'),
+('14','10'),
+('14','1');
+
+INSERT INTO car_accessory (car_id, accessory_id)
+VALUES ('13','3'),
+('13','10'),
+('13','1');
+
+INSERT INTO car_accessory (car_id, accessory_id)
+VALUES ('12','9'),
+('12','7'),
+('12','2');
+
+INSERT INTO car_accessory (car_id, accessory_id)
+VALUES ('11','9'),
+('11','7'),
+('11','2');
+--vypis tabulky--
+SELECT * FROM TABLE_NAME;
+
+
