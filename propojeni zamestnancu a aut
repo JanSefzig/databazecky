@@ -138,4 +138,28 @@ VALUES ('11','9'),
 --vypis tabulky--
 SELECT * FROM TABLE_NAME;
 
+--PROPOJENI TABULEK - JOIN,LEFT,JOIN--
+
+--zamestnanci napojeni na auto--
+SELECT * 
+FROM employee e
+JOIN car c ON e.car_id = c.id;
+--napojeni a model a znacku--
+SELECT e.firstname, e.lastname, e.email, e.phone,c.manufacturer,c.model
+FROM employee e
+JOIN car c ON e.car_id = c.id;
+--Vyberte všechny zaměstnance a jejich přidělená auta--
+SELECT e.firstname, e.lastname, e.email, e.phone, c.manufacturer, c.model
+
+FROM employee e
+
+JOIN car c ON e.car_id = c.id;
+--Vybere i zaměstnance bez auta--
+SELECT e.firstname, e.lastname, e.email, e.phone
+, c.manufacturer, c.model
+
+
+FROM employee e
+
+LEFT JOIN car c ON e.car_id = c.id;
 
