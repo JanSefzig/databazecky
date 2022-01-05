@@ -162,4 +162,16 @@ SELECT e.firstname, e.lastname, e.email, e.phone
 FROM employee e
 
 LEFT JOIN car c ON e.car_id = c.id;
+--i lide co nemaji auto--
+LEFT JOIN car c ON e.car_id = c.id; 
+
+-//-
+SELECT c.manufacturer,c.model,g.name,g.gps_x,g.gps_y
+FROM car c
+LEFT JOIN garage g ON c.garage_id = g.id;
+
+-//-
+SELECT e.firstname,e.lastname,c.manufacturer,c.model
+FROM employee e
+LEFT JOIN car c ON e.car_id = c.id;
 
