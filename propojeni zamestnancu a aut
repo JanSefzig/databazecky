@@ -136,7 +136,7 @@ VALUES ('11','9'),
 ('11','7'),
 ('11','2');
 --vypis tabulky--
-SELECT * FROM TABLE_NAME;
+SELECT * FROM car_accessory;
 
 --PROPOJENI TABULEK - JOIN,LEFT,JOIN--
 
@@ -175,3 +175,11 @@ SELECT e.firstname,e.lastname,c.manufacturer,c.model
 FROM employee e
 LEFT JOIN car c ON e.car_id = c.id;
 
+--oprava--
+ALTER TABLE garage
+ADD FOREIGN KEY (car_id) 
+REFERENCES car(id);
+
+ALTER TABLE garage
+ADD FOREIGN KEY (g.id) 
+REFERENCES garage(id);
