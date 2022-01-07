@@ -188,7 +188,7 @@ REFERENCES garage(id);
 
 SELECT c.max_speed
 FROM car c 
-WHERE '120';
+WHERE max_speed BETWEEN 120 AND 99999;
 
 SELECT c.spz
 FROM car c 
