@@ -190,3 +190,7 @@ SELECT c.max_speed
 FROM car c 
 WHERE '120';
 
+SELECT c.spz
+FROM car c 
+WHERE SPZ LIKE '%S%';
+
