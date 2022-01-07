@@ -183,3 +183,10 @@ REFERENCES car(id);
 ALTER TABLE garage
 ADD FOREIGN KEY (g.id) 
 REFERENCES garage(id);
+
+--WHERE Rychlost a SPZ--
+
+SELECT c.max_speed
+FROM car c 
+WHERE '120';
+
