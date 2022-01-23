@@ -194,3 +194,11 @@ SELECT c.spz
 FROM car c 
 WHERE SPZ LIKE '%S%';
 
+
+--OPRAVA--26.11--chyběl select--
+SELECT *
+FROM car c
+JOIN car_accessory c_a ON c.id = c_a.car_id
+JOIN accessory a ON c_a.accessory_id = a.id;
+
+
