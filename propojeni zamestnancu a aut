@@ -201,4 +201,11 @@ FROM car c
 JOIN car_accessory c_a ON c.id = c_a.car_id
 JOIN accessory a ON c_a.accessory_id = a.id;
 
+--SELECT, který vybere id auta, výrobce, model, spz, název příslušenství--  + NAZEV daneho prislusenstvi
+
+SELECT "id", "amufacturer", "model", "spz", "description"  FROM `car` WHERE `description` = 'neco';
+
+
+
+
 
