@@ -24,6 +24,15 @@ CREATE TABLE subject (
   description VARCHAR (255)
 ); 
 
+CREATE TABLE classroom (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  number VARCHAR (255),
+  description VARCHAR (255),
+  building VARCHAR (255),
+  seats_count INT ,
+  is_computer_lab INT
+); 
+
 --INSERT INTO--
 INSERT INTO student ( firstname, lastname, class, email) 
 VALUES ( 'Jan' , 'Sefzig' , '2.C' , 'nicolas.jan.sefzig@student.ossp.cz' ),
@@ -56,6 +65,18 @@ VALUES ( 'Matematika' , 'Rovnice a počítání'  ),
        ( 'Tělesná výchova' , 'Joga' ),
        ( 'Angličtina' , 'AJ jazyk, slovíčka' ),
        ( 'Algoritmizace' , 'Databáze' );
+
+INSERT INTO classroom( number, description, building, seats_count, is_computer_lab) 
+VALUES ( '9' , 'V' , '2' , '30','0'),
+       ( '6.A' , 'V' , '1' , '30','0'),
+       ( '2' , 'V' , '1' , '30','0'),
+       ( '13' , 'V' , '2' , '30','0'),
+       ( '15' , 'M' , '2' , '15','0'),
+       ( '19' , 'M' , '1' , '15','1'),
+       ( '1' , 'M' , '1' , '15','1'),
+       ( '99' , 'V' , '2' , '3000','0'),
+       ( '6.B' , 'V' , '1' , '30','0'),
+       ( '19' , 'M' , '1' , '15','1');
 
 --PŘIDÁNÍ SLOUPCE--
 ALTER TABLE subjects ADD shortname varchar(10);
