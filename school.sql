@@ -18,6 +18,12 @@ CREATE TABLE teacher (
   description VARCHAR (255)
 ); 
 
+CREATE TABLE subject (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR (255),
+  description VARCHAR (255)
+); 
+
 --INSERT INTO--
 INSERT INTO student ( firstname, lastname, class, email) 
 VALUES ( 'Jan' , 'Sefzig' , '2.C' , 'nicolas.jan.sefzig@student.ossp.cz' ),
@@ -38,3 +44,30 @@ VALUES ( 'Martin' , 'Kokeš' , 'martin.kokes@ossp.cz' , 'IT' ),
        ( 'Milan' , 'Hála', 'milan.hala@ossp.cz' , 'CH, F, TV' ),
        ( 'Anna' , 'Říhová', 'anna.rihova@ossp.cz' , 'ČJ' ),
        ( 'Barbora' , 'Kulhánková', 'barboba.kulhankova@ossp.cz' , 'L, N' );
+
+INSERT INTO subject ( name, description) 
+VALUES ( 'Matematika' , 'Rovnice a počítání'  ),
+       ( 'Český Jazyk' , 'Mateřský jazyk' ),
+       ( 'Fyzika' , 'Vesmír' ),
+       ( 'Chemie' , 'Prvky' ),
+       ( 'Technické vybavení' , 'Hardware' ),
+       ( 'Webové programování' , 'PHP'  ),
+       ( 'Značkovací jazyky' , 'CSS' ),
+       ( 'Tělesná výchova' , 'Joga' ),
+       ( 'Angličtina' , 'AJ jazyk, slovíčka' ),
+       ( 'Algoritmizace' , 'Databáze' );
+
+--PŘIDÁNÍ SLOUPCE--
+ALTER TABLE subjects ADD shortname varchar(10);
+
+--UPDATE shortname--
+UPDATE subject SET shortname = 'AG' WHERE ID = 10;
+UPDATE subject SET shortname = 'AJ' WHERE ID = 9;
+UPDATE subject SET shortname = 'TV' WHERE ID = 8;
+UPDATE subject SET shortname = 'ZJ' WHERE ID = 7;
+UPDATE subject SET shortname = 'WP' WHERE ID = 6;
+UPDATE subject SET shortname = 'TeV' WHERE ID = 5;
+UPDATE subject SET shortname = 'CH' WHERE ID = 4;
+UPDATE subject SET shortname = 'F' WHERE ID = 3;
+UPDATE subject SET shortname = 'ČJ' WHERE ID = 2;
+UPDATE subject SET shortname = 'M' WHERE ID = 1;
