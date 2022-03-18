@@ -92,3 +92,15 @@ UPDATE subject SET shortname = 'CH' WHERE ID = 4;
 UPDATE subject SET shortname = 'F' WHERE ID = 3;
 UPDATE subject SET shortname = 'ČJ' WHERE ID = 2;
 UPDATE subject SET shortname = 'M' WHERE ID = 1;
+
+--UNIQUE--Nemůžeme přidat stejné data do jedné tabulky--
+ALTER TABLE classroom
+ADD UNIQUE (number);
+
+ALTER TABLE student
+ADD UNIQUE (email);
+
+ALTER TABLE teacher
+ADD UNIQUE (email);
+
+
