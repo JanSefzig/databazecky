@@ -126,3 +126,32 @@ VALUES ( '1' , '1' , '6' , '1' ,'2'),
        ( '8' , '4', '8' , '1' ,'4'),
        ( '9' , '5', '9' , '1','5' ),
        ( '10' , '1', '10' , '3','2' );
+
+--tabulka class--
+CREATE TABLE class (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  description VARCHAR(255)
+); 
+
+INSERT INTO class ( name, description) 
+VALUES ( '2.C' , 'it' ),
+       ( '2.H' , 'hasiči' ),
+       ( '2.B' , 'ekonomika' ),
+       ( '2.G' , 'grafici' ),
+       ( '2.A' , 'obaláři' );
+
+ALTER TABLE schedule ADD class_id INT;
+
+ALTER TABLE schedule
+ADD FOREIGN KEY (class_id) REFERENCES class(id);
+
+UPDATE schedule
+SET class_id = '1'
+WHERE id = 1;
+
+ALTER TABLE student
+DROP COLUMN class;
+
+ALTER TABLE student
+ADD FOREIGN KEY (class_id) REFERENCES class(id);
