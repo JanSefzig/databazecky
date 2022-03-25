@@ -33,6 +33,8 @@ CREATE TABLE classroom (
   is_computer_lab INT
 ); 
 
+
+
 --INSERT INTO--
 INSERT INTO student ( firstname, lastname, class, email) 
 VALUES ( 'Jan' , 'Sefzig' , '2.C' , 'nicolas.jan.sefzig@student.ossp.cz' ),
@@ -103,4 +105,24 @@ ADD UNIQUE (email);
 ALTER TABLE teacher
 ADD UNIQUE (email);
 
+--Schedule tabulka--
+CREATE TABLE schedule (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  classroom_id INT,
+  teacher_id INT,
+  subject_id INT,
+  lesson_number INT ,
+  day_of_week tinyint
+); 
 
+INSERT INTO schedule ( classroom_id, teacher_id, subject_id, lesson_number, day_of_week) 
+VALUES ( '1' , '1' , '6' , '1' ,'2'),
+       ( '2' , '2', '1' , '1','3'),
+       ( '3' , '3', '3' , '1','1'),
+       ( '4' , '3', '4' , '2','1' ),
+       ( '5' , '3', '5' , '3','1' ),
+       ( '6' , '1', '6' , '2','2' ),
+       ( '7' , '2', '7' , '2','3' ),
+       ( '8' , '4', '8' , '1' ,'4'),
+       ( '9' , '5', '9' , '1','5' ),
+       ( '10' , '1', '10' , '3','2' );
