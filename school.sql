@@ -155,3 +155,22 @@ DROP COLUMN class;
 
 ALTER TABLE student
 ADD FOREIGN KEY (class_id) REFERENCES class(id);
+
+--Propojení tabulky schedule pomocí JOIN-ů--
+SELECT
+  classroom_id
+FROM schedule
+JOIN classroom
+  ON classroom.id=classroom_id
+
+SELECT
+  teacher_id
+FROM schedule
+JOIN teacher
+  ON teacher.id=teacher_id
+
+SELECT
+  subject_id
+FROM schedule
+JOIN subject
+  ON subject.id=subject_id
