@@ -157,20 +157,9 @@ ALTER TABLE student
 ADD FOREIGN KEY (class_id) REFERENCES class(id);
 
 --Propojení tabulky schedule pomocí JOIN-ů--
-SELECT
-  classroom_id
-FROM schedule
-JOIN classroom
-  ON classroom.id=classroom_id
-
-SELECT
-  teacher_id
-FROM schedule
-JOIN teacher
-  ON teacher.id=teacher_id
-
-SELECT
-  subject_id
-FROM schedule
-JOIN subject
-  ON subject.id=subject_id
+SELECT t.lastname, c.name, s.name, n.number
+FROM schedule f
+JOIN teacher t ON f.teacher_id = t.id
+JOIN class c ON f.class_id = c.id
+JOIN subject s ON f.subject_id = s.id
+JOIN classroom n ON f.classroom_id = n.id ;
