@@ -163,3 +163,13 @@ JOIN teacher t ON f.teacher_id = t.id
 JOIN class c ON f.class_id = c.id
 JOIN subject s ON f.subject_id = s.id
 JOIN classroom n ON f.classroom_id = n.id ;
+
+SELECT f.lesson_number_id FROM schedule f;
+SELECT f.day_of_week_id FROM schedule f;
+
+--SELECT day_of_week--
+SELECT s.shortname, t.firstname,t.lastname,day_of_week 
+FROM schedule f
+JOIN teacher t ON f.teacher_id = t.id
+JOIN subject s ON f.subject_id = s.id
+WHERE day_of_week='1';
