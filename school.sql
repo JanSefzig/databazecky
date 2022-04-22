@@ -173,3 +173,45 @@ FROM schedule f
 JOIN teacher t ON f.teacher_id = t.id
 JOIN subject s ON f.subject_id = s.id
 WHERE day_of_week='1';
+
+--Tabulka classification--
+CREATE TABLE classification (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  grade tinyint,
+  student_id INT UNSIGNED,
+  subject_id INT UNSIGNED,
+  teacher_id INT UNSIGNED,
+  description  text,
+  created_at datetime
+); 
+
+INSERT INTO classification ( grade, student_id, subject_id, teacher_id, description, created_at ) 
+VALUES ( '11' , '1', '1', '2', 'výborný žák', '2021-04-22 08:17:31' ),
+ ( '2' , '2', '1', '2', 'ok ', '2021-04-22 08:18:11' ),
+ ( '3' , '3', '1', '2', 'jde to ', '2021-04-22 08:19:11' ),
+ ( '4' , '4', '1', '2', 'uč se', '2021-04-22 08:20:21' ),
+ ( '5' , '5', '1', '2', 'tragédie', '2021-04-22 08:21:31' ),
+ ( '1' , '6', '1', '2', 'výborný žák', '2021-04-22 08:22:11' ),
+ ( '2' , '7', '1', '2', 'ok', '2021-04-22 08:23:31' ),
+ ( '3' , '8', '1', '2', 'jde to', '2021-04-22 08:24:11' ),
+ ( '4' , '9', '1', '2', 'uč se', '2021-04-22 08:25:31' ),
+ ( '5' , '10', '1', '2', 'tragédie', '2021-04-22 08:26:41' );
+
+SELECT teacher_id
+FROM classification cc
+JOIN teacher t ON cc.teacher_id = t.id;
+
+ALTER TABLE classification
+ADD FOREIGN KEY (teacher_id) REFERENCES teacher(id);
+
+ALTER TABLE classification
+ADD FOREIGN KEY (student_id) REFERENCES student(id);
+
+ALTER TABLE classification
+ADD FOREIGN KEY (subject_id) REFERENCES subject(id);
+
+SELECT c.lastname, t.lastname, s.id, cc.grade, cc.description
+FROM classification cc
+JOIN teacher t ON cc.teacher_id = t.id
+JOIN student c ON cc.student_id = c.id
+JOIN subject s ON cc.subject_id = s.id ;
