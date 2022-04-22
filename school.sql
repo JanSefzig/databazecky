@@ -210,7 +210,7 @@ ADD FOREIGN KEY (student_id) REFERENCES student(id);
 ALTER TABLE classification
 ADD FOREIGN KEY (subject_id) REFERENCES subject(id);
 
-SELECT c.lastname, t.lastname, s.id, cc.grade, cc.description
+SELECT c.lastname AS 'Příjmení studenta', t.lastname AS 'Příjmení učitele', s.id AS 'Předmět', cc.grade AS 'Známka', cc.description AS 'Popis'
 FROM classification cc
 JOIN teacher t ON cc.teacher_id = t.id
 JOIN student c ON cc.student_id = c.id
