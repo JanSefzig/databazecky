@@ -215,3 +215,74 @@ FROM classification cc
 JOIN teacher t ON cc.teacher_id = t.id
 JOIN student c ON cc.student_id = c.id
 JOIN subject s ON cc.subject_id = s.id ;
+
+--prumerna znamka--
+SELECT AVG(grade)
+FROM classification
+WHERE 1;
+--nejhorsi znamka--
+SELECT s.shortname, MAX(grade)
+FROM subject s
+JOIN classification c ON c.subject_id = s.id
+
+GROUP BY s.shortname;
+--nejlepsi znamka--
+SELECT s.shortname, MIN(grade)
+FROM subject s
+JOIN classification c ON c.subject_id = s.id
+
+GROUP BY s.shortname;
+
+INSERT INTO classification ( firstname, lastname, sex, nation, description ) 
+VALUES ( 'Altaïr' , 'Ibn-LaʼAhad', 'Male', 'Syrian', 'Legend' ),
+ ( 'Ezio' , 'Auditore da Firenze', 'Male', 'Italian', 'Master' ),
+ ( 'Connor ' , 'Kenway', 'Male', 'Irish', 'Soldier' ),
+ ( 'Edward' , 'Kenway', 'Male', 'Welsh', 'Captian' ),
+ ( 'Shay Patrick' , 'Cormac', 'Male', 'Irish-American', 'Traitor' ),
+ ( 'Arno' , 'Dorian', 'Male', 'French', 'Revolutionary' ),
+ ( 'Jacob' , 'Frye', 'Male', 'English', 'Liberator' ),
+ ( 'Evie' , 'Frye', 'Female', 'English', 'Liberator' ),
+ ( 'Bayek' , 'from Siwa', 'Male', 'Egyptian', 'Protector' ),
+ ( 'Alexios' , 'from Sparta', 'Male', 'Greek', 'Warrior' ),
+ ( 'Eivor' , 'Wise Gift', 'Female', 'Nordic', 'Viking' ),
+ ( 'François Thomas' , 'Germain', 'Male', 'French', 'Blacksmith' ),
+ ( 'Cesare' , 'Borgia', 'Male', 'Italian', 'Prince' ),
+ ( 'Haytham' , 'Kenway', 'Male', 'British', 'Father' ),
+ ( 'Deimos' , '', 'Female', 'Greek', 'Warrior' ),
+ ( 'Crawford' , 'Starrick', 'Male', 'England', 'Grand Master' ),
+ ( ' Robert' , 'de Sablé', 'Male', 'French', 'Templar' );
+
+INSERT INTO games ( name, year ) 
+VALUES ( 'Assassins Creed', '2007 '),
+ ( 'Assassins Creed II' , '2009'),
+ ( 'Assassins Creed III' , '2012'),
+ ( 'Asssassins Creed IV Black Flag' , '2013'),
+ ( 'Asssassins Creed Rogue' , '2014'),
+ ( 'Asssassins Creed Unity' , '2014'),
+ ( 'Asssassins Creed Syndicate' , '2015'),
+ ( 'Asssassins Creed Origins' , '2017'),
+ ( 'Asssassins Creed Odyssey' , '2018'),
+ ( 'Asssassins Creed Valhalla' , '2020');
+
+ INSERT INTO location ( location ) 
+VALUES ( 'Jerusalem'),
+ ( 'Firenze'),
+ ( 'Boston'),
+ ( 'Caribic'),
+ ( ' New York'),
+ ( 'Paris'),
+ ( 'London'),
+ ( 'Egypt'),
+ ( 'Greece'),
+ ( 'England');
+
+ INSERT INTO age ( age ) 
+VALUES ( 'antiquity'),
+( 'medieval'),
+( 'modern age'),
+( 'renaissance');
+
+
+ 
+
+
